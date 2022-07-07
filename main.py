@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from scripts.colleagues_DB import colleagues_db
 app = FastAPI()
 #uvicorn main:app --reload
 
@@ -26,3 +27,14 @@ def read_contacts():
         'adress':'Pushkina str,Kolotushkina house'
     }
     return contacts
+
+@app.get("/project/colleagues")
+def read_colleagues():
+    return colleagues_db
+
+# @app.get("/project/collegues/{name}")
+# def read_colleagues_name():
+#     return 'colleagues_name'
+
+
+
