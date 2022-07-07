@@ -32,9 +32,15 @@ def read_contacts():
 def read_colleagues():
     return colleagues_db
 
-# @app.get("/project/collegues/{name}")
-# def read_colleagues_name():
-#     return 'colleagues_name'
+@app.get("/project/colleagues/{name}")
+def read_colleagues_name(name):
+    name = name.capitalize()
+
+    if name in colleagues_db:
+        return colleagues_db[name]
+    else:
+        return 'there is no user'
+
 
 
 
