@@ -18,3 +18,11 @@ def read_project():
     }
     return about
 
+@app.get("/project/contacts")
+def read_contacts():
+    contacts = {
+        'country':'Qazaqstan',
+        'city':'Almaty',
+        'adress':'Pushkina str,Kolotushkina house'
+    }
+    return contacts
